@@ -1,0 +1,30 @@
+void leftrotate(int arr[],int n){
+    int tmp = arr[0],i;
+    for(i=0;i<n-1;i++){
+        arr[i]=arr[i+1];
+    }
+    arr[i]=tmp;
+}
+/*
+void rotate(int arr[], int d, int size) {
+    for(int i=0;i<d;i++){
+        leftrotate(arr,size);
+    }
+}
+*/
+void rotate(int *input, int d, int n)
+{
+    int i = 0;
+    long arr[n];
+    for(d; d<n; d++){     //after rotation the new array starts with dth index element
+        arr[i]=input[d];
+        i++;
+    }
+    for(int k = 0; k<d; k++){
+        arr[i] = input[k];
+        i++;
+    }
+    for(int j = 0; j<n; j++){
+        input[j] = arr[j];
+    }
+}
